@@ -1,76 +1,79 @@
-# 📱 YouTube Content Downloader (Mobile)
+# YouTube Content Downloader (Mobile)
 
-> **Projeto Acadêmico - Faculdade de Ciências Educacionais de Capim Grosso (FCG)**
+> **Projeto Acadêmico — Faculdade de Ciências Educacionais de Capim Grosso (FCG)**
 
-Este projeto consiste em uma aplicação móvel completa (Full-Stack) para pesquisa e download de conteúdos do YouTube. [cite_start]Foi desenvolvido como atividade avaliativa solicitada pelo Prof. Clarisvaldo, optando-se por uma abordagem de desenvolvimento customizado em detrimento de plataformas low-code (AppSheets) para garantir maior controle arquitetural e aprendizado técnico[cite: 2, 7, 14, 15, 16].
+Aplicativo mobile Full-Stack desenvolvido para pesquisa e download de conteúdos do YouTube, criado como atividade avaliativa proposta pelo **Prof. Clarisvaldo**. O projeto opta por uma abordagem totalmente personalizada, em vez de ferramentas low-code, visando aprofundar o aprendizado técnico e garantir maior controle sobre a arquitetura.
 
 ---
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
-O aplicativo permite ao usuário interagir com a API do YouTube para realizar as seguintes ações:
+O aplicativo permite ao usuário interagir diretamente com a API do YouTube por meio de uma API própria, oferecendo:
 
-* [cite_start]🔍 **Pesquisa de Vídeos:** Busca de conteúdo utilizando palavras-chave[cite: 20].
-* [cite_start]📹 **Download de Vídeo:** Extração e download no formato **MP4**[cite: 21].
-* [cite_start]🎵 **Download de Áudio:** Conversão e download no formato **MP3**[cite: 21].
-* [cite_start]🖼️ **Download de Capa:** Extração da miniatura (Thumbnail) do vídeo[cite: 22].
+* 🔍 **Pesquisa de Vídeos** – Busca de conteúdo utilizando palavras-chave.
+* 📹 **Download de Vídeo (MP4)** – Extração do vídeo no formato MP4.
+* 🎵 **Download de Áudio (MP3)** – Conversão direta para áudio.
+* 🖼️ **Download de Thumbnail** – Obtenção da imagem de capa do vídeo.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-[cite_start]O projeto foi dividido em duas frentes principais: Backend (API) e Frontend (Mobile)[cite: 17, 44].
+O sistema foi dividido em duas partes principais: **Backend (API)** e **Frontend (Mobile)**.
 
-### Backend
-* [cite_start]**Node.js**: Ambiente de execução JavaScript[cite: 17].
-* **Express**: (Inferido pela estrutura RESTful).
-* [cite_start]**yt-search**: Biblioteca utilizada para o motor de busca dos vídeos[cite: 28].
-* [cite_start]**Render**: Plataforma de hospedagem e deploy da API[cite: 29].
+### **Backend**
 
-### Frontend
-* **React Native**: Framework para desenvolvimento móvel.
-* [cite_start]**Expo Go**: Plataforma para execução e testes da interface gráfica[cite: 17, 32].
+* **Node.js** – Ambiente de execução JavaScript.
+* **Express** – Estrutura para criação de rotas RESTful.
+* **yt-search** – Motor de busca para localizar vídeos no YouTube.
+* **Render** – Plataforma utilizada para hospedagem e deploy da API.
 
----
+### **Frontend**
 
-## 🔗 Documentação da API
-
-[cite_start]A API foi desenvolvida seguindo o padrão RESTful e está hospedada publicamente em: `https://youtube-dowloader-app.onrender.com`[cite: 25, 29].
-
-| Endpoint | Método | Descrição | Parâmetros (Query) | Exemplo |
-| :--- | :---: | :--- | :--- | :--- |
-| `/api/yt` | `GET` | Pesquisa vídeos no YouTube. | `q` (Obrigatório) | `?q=Educação Física` |
-| `/api/yt/mp3` | `GET` | Baixa o áudio do vídeo. | `url` ou `id` | `?id=4Qw0ycjUPcE` |
-| `/api/yt/mp4` | `GET` | Baixa o vídeo completo. | `url` ou `id` | `?id=4Qw0ycjUPcE` |
-| `/api/yt/thumbnail`| `GET` | Baixa a imagem de capa. | `url` ou `id` | `?id=4Qw0ycjUPcE` |
-
-[cite_start]*Tabela baseada nos dados do relatório técnico[cite: 28].*
+* **React Native** – Framework para desenvolvimento mobile multiplataforma.
+* **Expo Go** – Ferramenta para execução, testes e empacotamento do aplicativo.
 
 ---
 
-## 👥 Autores e Responsabilidades
+## Documentação da API
 
-O projeto foi executado de forma colaborativa, com divisão clara de responsabilidades:
+A API está disponível publicamente em:
 
-| Integrante | Função | Responsabilidades |
-| :--- | :--- | :--- |
-| **Jefferson Silva De Souza** | *Backend & Integração* | [cite_start]Desenvolvimento da API em Node.js, configuração de rotas, endpoints de download e integração final entre cliente e servidor (Deploy)[cite: 9, 25, 39]. |
-| **Otavio Neto Cerqueira Silva** | *Frontend & UI/UX* | [cite_start]Desenvolvimento da interface gráfica utilizando Expo/React Native, criação do Menu Inicial, Página de Resultados e Visualização[cite: 10, 32]. |
+```
+https://youtube-dowloader-app.onrender.com
+```
+
+### **Endpoints Disponíveis**
+
+| Endpoint            | Método | Descrição                   | Parâmetros (Query) | Exemplo              |
+| ------------------- | :----: | --------------------------- | ------------------ | -------------------- |
+| `/api/yt`           |  `GET` | Pesquisa vídeos no YouTube. | `q` (obrigatório)  | `?q=Educação Física` |
+| `/api/yt/mp3`       |  `GET` | Download do áudio (MP3).    | `url` ou `id`      | `?id=4Qw0ycjUPcE`    |
+| `/api/yt/mp4`       |  `GET` | Download do vídeo (MP4).    | `url` ou `id`      | `?id=4Qw0ycjUPcE`    |
+| `/api/yt/thumbnail` |  `GET` | Download da thumbnail.      | `url` ou `id`      | `?id=4Qw0ycjUPcE`    |
+
+---
+
+## Equipe e Responsabilidades
+
+| Integrante                      | Função               | Principais Atividades                                                                                               |
+| ------------------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Jefferson Silva de Souza**    | Backend & Integração | Desenvolvimento da API, criação de endpoints de download, estruturação do servidor e deploy na Render.              |
+| **Otavio Neto Cerqueira Silva** | Frontend & UI/UX     | Desenvolvimento da interface com React Native/Expo, criação das telas de navegação, busca e exibição dos conteúdos. |
 
 ---
 
-## 📅 Histórico de Desenvolvimento
+## Linha do Tempo do Desenvolvimento
 
-* [cite_start]**26/11/2025:** Início do desenvolvimento do Servidor Backend e da Interface Gráfica[cite: 24, 31].
-* [cite_start]**01/12/2025:** Integração entre Frontend e Backend, deploy na Render.com e geração do APK final[cite: 38, 41].
+* **26/11/2025** — Início do desenvolvimento do backend e prototipação da interface.
+* **01/12/2025** — Integração completa entre frontend e backend, deploy do servidor e geração do APK final.
+
+---
+
+## Licença
+
+Projeto desenvolvido exclusivamente para fins educacionais.
 
 ---
 
-## 📝 Licença
-
-Este projeto foi desenvolvido para fins educacionais.
-
----
-[cite_start]*Local: Capim Grosso/BA - 2025 [cite: 5, 12]*
-
-***
+**Capim Grosso — BA, 2025**
