@@ -1,6 +1,6 @@
 import { Dimensions } from 'react-native';
 
-export const API_URL = 'http://192.168.1.115:3000';
+export const API_URL = 'https://youtube-dowloader-app.onrender.com';
 
 export const sanitizeFilename = (name: string) => {
   return name
